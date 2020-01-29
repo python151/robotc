@@ -6,6 +6,34 @@
 task main()
 {
 
+void setAll(int val) {
+	motor[backdrive] = val;
+	motor[frontleft] = val;
+	motor[frontright] = val;
+}
+
+void driveForward(int time) {
+	setAll(127);
+	wait1MSec[time];
+	setAll(0);
+}
+
+void turnR(int time) {
+	motor[frontright] = 127;
+	motor[frontleft] = -127;
+
+	wait1Msec[time];
+	setAll[0];
+}
+
+void turnL(int time) {
+	motor[frontright] = -127;
+	motor[frontleft] = 127;
+
+	wait1Msec[time];
+	setAll[0];
+}
+
 
 
 }
